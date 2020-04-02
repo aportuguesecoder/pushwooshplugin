@@ -119,11 +119,13 @@ function copyGoogleServiceOnIos(sourceDir, targetDir) {
 module.exports = function(context) {
     return new Promise(function(resolve, reject) {
         var wwwpath = utils.getWwwPath(context);
+        console.log("[GOOGLE SERVICES] wwwpath: " + wwwpath);
         var configPath = path.join(wwwpath, "google-services");
-
+        console.log("[GOOGLE SERVICES] configPath: " + configPath);
         var prefZipFilename = "google-services";
+        console.log("[GOOGLE SERVICES] prefZipFilename: " + prefZipFilename);
         var zipFile = getZipFile(configPath, prefZipFilename);
-
+        console.log("[GOOGLE SERVICES] zipFile: " + zipFile);
         // if zip file is present, lets unzip it!
         if (!zipFile) {
             return reject(
